@@ -5,7 +5,7 @@ var handlebars = require("express-handlebars");
 const app = express();
 const port = 3000;
 
-// Static file
+// use static file
 app.use(express.static("src/public"));
 
 //Template engine: express-handlebars setup
