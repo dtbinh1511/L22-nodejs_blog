@@ -5,6 +5,9 @@ var handlebars = require("express-handlebars");
 const app = express();
 const port = 3000;
 
+const route = require("./routes");
+
+
 // use middleware for express
 app.use(
   express.urlencoded({
@@ -27,24 +30,8 @@ app.set("views", path.join(__dirname, "resources/views"));
 // app.use(morgan("combined"));
 
 //route
-app.get("/", function (req, res) {
-  res.render("home");
-});
+route(app) // sperate small 
 
-app.get("/news", function (req, res) {
-  res.render("news");
-});
-app.get("/search", function (req, res) {
-  res.render("search");
-});
-
-app.post("/search", function (req, res) {
-  // UI -> middleware  -> controller
-  // req.query -> middleware
-  // req.body != middleware => use middleware
-  console.log(req.body);
-  res.send("");
-});
 
 app.listen(port, () => {
   console.log(`Connected to port ${port}`);
