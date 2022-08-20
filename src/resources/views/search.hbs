@@ -1,0 +1,35 @@
+<form class="mt-4" method="post" action="">
+  <div class="form-group">
+    <label for="full-name">Họ & tên</label>
+
+    <input
+      type="text"
+      name="q"
+      class="form-control"
+      id="full-name"
+      placeholder="Nhập từ khóa"
+    />
+
+  </div>
+    <div class="form-check form-check-inline">
+      <input type="radio" name="gender" id="male" value="male" class="form-check-input" checked/>
+      <label for="male" class="form-check-label"/>Nam</label>
+    </div>
+     <div class="form-check form-check-inline">
+      <input type="radio" name="gender" id="female" value="female"class="form-check-input" />
+      <label for="female" class="form-check-label">Nữ</label>
+    </div>
+     
+
+    <div class="form-group">
+      <label for="born">Nơi sinh</label>
+      <select name="city" id="born" class="form-control">
+        <option value="">-- Chọn nơi sinh -- </option>
+        <option value="HoChiMinh">Thành phố Hồ Chí Minh</option>
+        <option value="DongNai">Tỉnh Đồng Nai</option>
+        <option value="HaNoi">Hà Nội</option>
+      </select>
+    </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
