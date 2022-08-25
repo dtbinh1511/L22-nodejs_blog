@@ -7,6 +7,11 @@ const port = 3000;
 
 const route = require('./routes');
 
+const db = require('./config/db');
+
+// Connect to db
+db.connect();
+
 // use middleware for express
 app.use(
 	express.urlencoded({
