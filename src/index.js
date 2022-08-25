@@ -1,38 +1,36 @@
-const path = require("path");
-const express = require("express");
-var morgan = require("morgan");
-var handlebars = require("express-handlebars");
+const path = require('path');
+const express = require('express');
+var morgan = require('morgan');
+var handlebars = require('express-handlebars');
 const app = express();
 const port = 3000;
 
-const route = require("./routes");
-
+const route = require('./routes');
 
 // use middleware for express
 app.use(
-  express.urlencoded({
-    extended: true, // use library body-parser
-  })
+	express.urlencoded({
+		extended: true, // use library body-parser
+	}),
 ); // client -> server: form html
 app.use(express.json()); //client -> server : code javascript json
 
 // use static file
-app.use(express.static("src/public"));
+app.use(express.static('src/public'));
 
 //Template engine: express-handlebars setup
-const hbs = handlebars.engine({ extname: ".hbs" });
+const hbs = handlebars.engine({ extname: '.hbs' });
 // Rendering engine setup
-app.engine("hbs", hbs);
-app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "resources/views"));
+app.engine('hbs', hbs);
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resources/views'));
 
 //morgan
 // app.use(morgan("combined"));
 
 //route
-route(app) // sperate small 
-
+route(app); // sperate small
 
 app.listen(port, () => {
-  console.log(`Connected to port ${port}`);
+	console.log(`Connected to port ${port}`);
 });
