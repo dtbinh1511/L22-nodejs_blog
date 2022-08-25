@@ -21,14 +21,14 @@ app.use(
 app.use(express.json()); //client -> server : code javascript json
 
 // use static file
-app.use(express.static('src/public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Template engine: express-handlebars setup
 const hbs = handlebars.engine({ extname: '.hbs' });
 // Rendering engine setup
 app.engine('hbs', hbs);
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resources/views'));
+app.set('views', path.join(__dirname, 'resources', 'views'));
 
 //morgan
 // app.use(morgan("combined"));
