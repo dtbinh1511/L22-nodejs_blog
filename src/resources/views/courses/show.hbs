@@ -1,0 +1,65 @@
+<div class='mt-4'>
+	<div class='row'>
+		<div class='col-xl-3'>
+			<div class='course-box'>
+				<p class='text-primary'>Miễn phí</p>
+				<button class='btn btn-primary btn-resgiter' type='submit'>Đăng ký học</button>
+				<ul class='course-overview'>
+					<li class='course-overview__item'>
+						<i class='fa-solid fa-film'></i>
+						<p>Tổng số <span>1</span> video </p>
+					</li>
+					<li class='course-overview__item'>
+						<i class='fa-solid fa-gauge-high'></i>
+						<p>Trình độ <span></span></p>
+					</li>
+					<li class='course-overview__item'>
+						<i class='fa-solid fa-clock'></i>
+						<p>Cần <span>5</span> giờ để học</p>
+					</li>
+					<li class='course-overview__item'>
+						<i class='fa-solid fa-battery-full'></i>
+						<p>Truy cập mọi lúc mọi nơi</p>
+					</li>
+				</ul>
+			</div>
+
+            <div class='course-box mt-4'>
+				<p class='text-primary'>Miễn phí</p>
+				<button class='btn btn-primary btn-resgiter' type='submit'>Đăng ký học</button>
+				<ul class='course-overview'>
+					<li class='course-overview__item'>
+						<i class='fa-solid fa-film'></i>
+						<p>Tổng số <span>1</span> video </p>
+					</li>
+					<li class='course-overview__item'>
+						<i class='fa-solid fa-gauge-high'></i>
+						<p>Trình độ <span></span></p>
+					</li>
+					<li class='course-overview__item'>
+						<i class='fa-solid fa-clock'></i>
+						<p>Cần <span>5</span> giờ để học</p>
+					</li>
+					<li class='course-overview__item'>
+						<i class='fa-solid fa-battery-full'></i>
+						<p>Truy cập mọi lúc mọi nơi</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='col-xl-8'>
+			<h2>{{course.name}}</h2>
+			<iframe
+				width='100%'
+				height='500px'
+				src='https://www.youtube.com/embed/{{course.videoId}}'
+				title='YouTube video player'
+				frameborder='0'
+				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+				allowfullscreen
+			></iframe>
+
+            <p>{{course.description}}</p>
+		</div>
+	</div>
+</div>
