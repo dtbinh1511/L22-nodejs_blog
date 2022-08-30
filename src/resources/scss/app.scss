@@ -9,13 +9,7 @@
 	border: none !important;
 }
 
-a {
-	color: $main-color;
-}
 
-a:hover {
-	text-decoration: none;
-}
 
 .card-body--padding {
 	padding-left: 0;
@@ -85,9 +79,7 @@ a:hover {
 	padding-right: 15px;
 	border: none;
 }
-.btn-primary {
-	background-color: $primary-color;
-}
+
 
 .btn-rounded {
 	border-radius: 20px;
@@ -150,11 +142,12 @@ a:hover {
 // .btn-course-create > i {
 // 	color: #fff;
 // }
-
+.btn-trash,
 .btn-create {
 	color: #fff!important;
 	display: inline-block;
 	padding: 10px;
+	position: relative;
 }
 
 .user-avatar {
@@ -162,4 +155,11 @@ a:hover {
 	height: 28px;
 	border-radius: 50%;
 	margin-right: 4px;
+}
+
+
+.course-deleted{
+	position: absolute;
+    right:0;
+    top: 0;
 }

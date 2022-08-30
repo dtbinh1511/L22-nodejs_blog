@@ -17,14 +17,13 @@ class CourseController {
 
 	// [POST] /courses/store
 	store(req, res, next) {
-		const formData = req.body;
-		formData.image = `https://i.ytimg.com/vi/${formData.videoId}/maxresdefault.jpg`;
-		formData.users = 1;
-		const course = new Course(formData);
+		req.body.image = `https://i.ytimg.com/vi/${req.body.videoId}/maxresdefault.jpg`;
+		req.body.users = 1;
+		const course = new Course(req.body);
 		course
 			.save()
 			.then(() => {
-				res.redirect(`/`);
+				res.redirect(`/me/stored/courses`);
 			})
 			.catch(next);
 	}
@@ -48,8 +47,23 @@ class CourseController {
 
 	// [DELETE] /courses/:id
 	delete(req, res, next) {
-		Course.deleteOne({ _id: req.params.id }, req.body)
-			.then(() => res.redirect('/me/stored/courses/'))
+		// use plugin to soft delete
+		Course.delete({ _id: req.params.id })
+			.then(() => res.redirect('back'))
+			.catch(next);
+	}
+
+	// [PATCH] /courses/:id/restore
+	restore(req, res, next) {
+		Course.restore({ _id: req.params.id })
+			.then(() => res.redirect('back'))
+			.catch(next);
+	}
+
+	// [DELETE] /courses/:id/forceDelete
+	forceDelete(req, res, next) {
+		Course.deleteOne({ _id: req.params.id })
+			.then(() => res.redirect('back'))
 			.catch(next);
 	}
 }
